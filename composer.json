@@ -1,0 +1,46 @@
+{
+    "name": "jzavorohina/rhymer",
+    "description": "A PHP сlass for finding rhymes to words",
+    "type": "library",
+    "version": "1.2.1",
+    "keywords": [
+        "rhyme",
+        "rhyming",
+        "rhyme words",
+        "rhymer",
+        "poet",
+        "poetics",
+        "poetic",
+        "poetic work",
+        "poem",
+        "poetry",
+        "lyricist",
+        "verse",
+        "text engine"
+    ],
+    "homepage": "https://github.com/jzavorohina/rhymer",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Julia Zavorohina",
+            "email": "jzavorohina@yandex.ru",
+            "role": "lead"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/jzavorohina/rhymer/issues"
+    },
+    "require": {
+        "php": ">=5.0.0"
+    },
+    "require-dev": {
+        "php": ">=7.3.0",
+        "phpunit/phpunit": "^9"
+    },
+    "autoload": {
+        "files": [
+            "src/Rhymer.class.php",
+            "tests/RhymerRuTest.php"
+        ]
+    }
+}
