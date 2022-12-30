@@ -2,7 +2,7 @@
     "name": "jzavorohina/rhymer",
     "description": "A PHP сlass for finding rhymes to words",
     "type": "library",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "keywords": [
         "rhyme",
         "rhyming",

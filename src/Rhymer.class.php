@@ -70,7 +70,7 @@ class Rhymer
         $parsed = self::parseString($string);
         $pattern = self::getRegExp($parsed, 2, $end);
 
-        $fh = fopen('src/wordsBase.txt', 'r');
+        $fh = fopen(__DIR__ . '/wordsBase.txt', 'r');
         while ($w = fgets($fh)) {
             $word = trim($w);
             if (preg_match($pattern, $word) && mb_strtolower($word, 'UTF-8') !== mb_strtolower($string, 'UTF-8')) {
@@ -114,11 +114,16 @@ class Rhymer
         $strLen = mb_strlen($string, "UTF-8");
         $symbols = mb_str_split($string, 1, "UTF-8");
 
+        if (count($symbols) < 1) {
+            return [];
+        }
+
         foreach ($symbols as $key => $word) {
             $found = false;
 
             foreach (self::$GROUPS as $groupKey => $group) {
-                $isInGroup = in_array($word, $group);
+                $isInGroup = in_array(mb_strtolower($word, "UTF-8"), $group);
+
                 if (!empty($isInGroup)) {
                     $stringByGroupIds[$key] = self::$GROUPS_IDS[$groupKey];
                     $found = true;

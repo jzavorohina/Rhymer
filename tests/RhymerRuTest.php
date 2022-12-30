@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once("src\Rhymer.class.php");
+require_once(__DIR__ . "/../src/Rhymer.class.php");
 
 class RhymerRuTest extends TestCase
 {
@@ -30,6 +30,7 @@ class RhymerRuTest extends TestCase
             array('', array()),
             array(NULL, array()),
             array(array(), array()),
+            array('Офигенно', array()),
             array('процесс', array('Абсцесс', 'Эксцесс')),
             array('салют', array('Абсолют'))
         );
@@ -41,7 +42,14 @@ class RhymerRuTest extends TestCase
             array('', array()),
             array(NULL, array()),
             array(array(), array()),
-            array('', array()),
+            array('Офигенно', array(
+                'Офицер',
+                'Офицерство',
+                'Официальный',
+                'Официант',
+                'Официоз',
+                'Официозный'
+            )),
             array(
                 'процесс', array(
                     'Процедить',
